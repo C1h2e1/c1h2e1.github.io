@@ -19,7 +19,7 @@ c1h2e1.github.io
 [test](http://google.com).
 | demo         | URL                                                |
 | ------------ | ---------------------------------------------------|
-| demo   | [http://onevcat.com](http://baidu.com)           |
+| demo         | [baidu](http://baidu.com)             |
 
 
 
