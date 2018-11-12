@@ -15,7 +15,7 @@ cover_color: blue
 
 # The blog button should not be removed.
 blog_button:
-    title: Blog
+    title: 进入博客
     description: Visit blog
 
 # Navigation buttons in the front page.
@@ -36,7 +36,7 @@ comment:
 # Social
 social:
     weixin: baiheming123456 
-    github: https://github.com/C1h2e1
+    github: C1h2e1
     twitter: C1h2e1
     gplus: 107108267983477358170
     mail: c1h2e1@dafsec.org
