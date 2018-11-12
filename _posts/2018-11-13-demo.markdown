@@ -19,7 +19,11 @@ c1h2e1.github.io
 [test](http://google.com).
 | demo         | URL                                                |
 | ------------ | ---------------------------------------------------|
-| demo         | [baidu](http://baidu.com)             |
+| demo         | [baidu](http://baidu.com)                          |
+
+
+
+![图片pic1]({{ "/assets/images/avatar.jpg"|absolute_url}})
 
 
 
