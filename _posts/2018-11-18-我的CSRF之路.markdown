@@ -4,7 +4,7 @@ title:  Csrf利用挖掘之路
 date: 2018-11-18 10:28:24.000000000 +08:00
 ---
 #### what is CSRF?
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=554244265&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=554244265&auto=1&height=66"></iframe>
 `CSRF`CSRF（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF
 这么听起来好像不是那么好理解，我们举个例子
  `小明 和 小红 和 面部解锁 `的故事 
