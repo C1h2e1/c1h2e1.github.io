@@ -4,8 +4,9 @@ title:  Csrf的读取—增删改查-组合拳
 date: 2018-11-18 10:28:24.000000000 +08:00
 ---
 ##前面是扫盲后面会讲利用的姿势
-#### what is CSRF?
+#### What is CSRF?
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=554244265&auto=1&height=66"></iframe>
++	扫盲
 `CSRF`(Cross-site request forgery)跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF
 这么听起来好像不是那么好理解，我们举个例子
  `小明 和 小红 和 面部解锁 `的故事 
@@ -13,4 +14,8 @@ date: 2018-11-18 10:28:24.000000000 +08:00
 小明攻击者 小红受害者这里我们把小红的脸部也就是我们的`cookie`或者是一种识别我们用户的标识。手表这样用于验证也就是`Referer` 那么`token`就是服务端生成的数据了
 
 #### How to dig csrf vulnerability ?
++	实例：我们用一个csrf实例来进入我们的讲解过程[wooyun-csrf实例](http://www.anquan.us/static/bugs/wooyun-2015-0164067.html)
+![csrf_1]({{ "/assets/images/csrf_1.png"|csrf_1}})
+![csrf_2]({{ "/assets/images/csrf_2.png"|csrf_2}})
+上面这个例子是我在wooyun找到的以往的一个csrf漏洞，那么我们画一张流程图模拟一下他的挖掘流程和大体思路。
 
