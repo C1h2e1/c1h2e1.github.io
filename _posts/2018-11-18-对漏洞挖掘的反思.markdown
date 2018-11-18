@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  反思于总结
+title:  反思与总结
 date: 2018-11-19 10:28:24.000000000 +08:00
 ---
 #### 分享一首歌
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=520 height=86 src="//music.163.com/outchain/player?type=2&id=524149464&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="520" height="86" src="//music.163.com/outchain/player?type=2&id=524149464&auto=0&height=66"></iframe>
 
+这一段时间一直在挖bugx，看起来很努力的样子每天都是1点多睡觉，但并没有一点实际的成果，(主要原因还是菜)想了很多很多，总结就是懒惰和方向，还有细心程度，今天我想早早的睡觉给自己一个改过自新的机会自己同自己谈谈，感谢浪子表哥指出我的问题，这一次调整方针希望能够让自己变得更好，所以特意写这篇文章警醒自己，同时感谢Clay表哥和The_XX表哥感谢你们今天对我的技术指导，表弟定不负重托勇往直前，共勉！！！
+
+冲鸭！！！
