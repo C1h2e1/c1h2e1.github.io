@@ -1,47 +1,70 @@
-# Basic
-title:  C1h2e1's blog
-subtitle: 记录我的漫漫信息安全路
-welcome_message: 路漫漫其修远兮，吾将上下而求索
-creator: <a href="http://c1h2e1.github.io">@C1h2e1</a>
+# Site settings
+title: C1h2e1的漫漫信息安全路
+description: "路漫漫其修远兮，吾将上下而求索 ..."
+baseurl: "/index" # for test: remove string '/space-jekyll-template' to ''
+url: "http://c1h2e1.github.io/index/" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.githu.io'
 
+# User settings
+username: C1h2e1
+user_title: C1h2e1's Blog
+email: c1h2e1@dafsec.org
+twitter_username: C1h2e1
+github_username:  C1h2e1
+gplus_username:  C1h2e1
+linkedin_public_url: loremipsum # Example: For public profile 'www.linkedin.com/in/john-smith', 'john-smith' is your linkedin_public_url
+disqus_username: loremipsum
+profile_picture: https://c1h2e1.github.io/1.png
 
-permalink: /:year/:month/:title/
-
-# Format
+# Build settings
+markdown: kramdown
 highlighter: rouge
+permalink: /:title/
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: 
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
 
-# The blog button should not be removed.
-blog_button:
-    title: 进入博客
-    description: Visit blog
+# Links to include in menu navigation
+links:
+  section_1:
+    - title: home
+      url: /
+      key_trigger: 1
+    - title: my posts
+      url: /posts
+      key_trigger: 2
+    - title: series
+      url: /series
+      key_trigger: 3
+    - title: tags
+      url: /tags
+      key_trigger: 4
+    - title: about me
+      url: /about
+      key_trigger: 5
+  section_2:
+    - title: github
+      url: http://www.github.com/c1h2e1
+      new_tab: true
+      key_trigger: g
+    - title: twitter
+      url: http://www.twitter.com/c1h2e1
+      key_trigger: t
+    - title: search
+      url: ""
+      key_trigger: s #WARNING: search only works with "s"
 
-# Navigation buttons in the front page.
-nav:
-    - {title: C1h2e1, description: My Projects, url: 'http://c1h2e1.github.io'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
+# projects in header index
+projects:
+  - name: fluany
+    url: https://github.com/c1h2e1
+  - name: vim-frontend
+    url: https://github.com/c1h2e1
+  - name: generator-capybara
+    url: https://github.com/c1h2e1
 
-# Pagination
-gems: [jekyll-paginate]
-paginate: 10
-paginate_path: "page/:num/"
-
-# Comment
-comment:
-    disqus: C1h2e1
-    # duoshuo: 
-    
-# Social
-social:
-    weixin: baiheming123456 
-    github: C1h2e1
-    twitter: C1h2e1
-    gplus: 107108267983477358170
-    mail: c1h2e1@dafsec.org
-
-# Google Analytics
-ga:
-    # id: your_ga_id
-    # host: your_host
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
