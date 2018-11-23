@@ -2,19 +2,28 @@
 layout: default
 ---
 
-<div class="main-post-list hidden">
+<section>
+	{% for post in site.posts %}
+		{% unless post.next %}
+			<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+		{% else %}
+			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+			{% if year != nyear %}
+				<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+			{% endif %}
+		{% endunless %}
+		<ul>
+			<li>
+				<div class="post-date code">
+					<span>{{ post.date | date: "%b %d" }}</span>
+				</div>
+				<div class="title">
+					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+				</div>
+			</li>
+		</ul>
 
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta"><time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{ post.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{ post.tags | join:' ' }}</span><a class="btn-border-small" href={{ post.url }}>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    {% endfor %}
-  </ol>
+	{% endfor %}
 
-  {% include pagination.html %}
-
-</div>
+</section>

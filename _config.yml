@@ -1,47 +1,43 @@
-# Basic
-title:  C1h2e1's blog
-subtitle: 记录我的漫漫信息安全路
-welcome_message: 路漫漫其修远兮，吾将上下而求索
-creator: <a href="http://c1h2e1.github.io">@C1h2e1</a>
+# Site Info
+title:              "C1h2e1's Blog"
+description:        "C1h2e1's Blog"
+author_name:        "C1h2e1" # change this to your name
+logo_url:           /assets/avatar.jpg
 
+# Site Settings
+url:                https://c1h2e1.github.io # main url
+baseurl:            
+#permalink:          /:title
+timezone:           Asia/qinghuangdao # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
-permalink: /:year/:month/:title/
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
 
-# Format
-highlighter: rouge
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script" ]
+plugins:
+  - jekyll-sitemap
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: 
-
-# The blog button should not be removed.
-blog_button:
-    title: 进入博客
-    description: Visit blog
-
-# Navigation buttons in the front page.
-nav:
-    - {title: C1h2e1, description: My Projects, url: 'http://c1h2e1.github.io'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
-
-# Pagination
-gems: [jekyll-paginate]
-paginate: 10
-paginate_path: "page/:num/"
-
-# Comment
-comment:
-    disqus: C1h2e1
-    # duoshuo: 
-    
-# Social
-social:
-    weixin: baiheming123456 
-    github: C1h2e1
-    twitter: C1h2e1
-    gplus: 107108267983477358170
-    mail: c1h2e1@dafsec.org
-
-# Google Analytics
-ga:
-    # id: your_ga_id
-    # host: your_host
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
