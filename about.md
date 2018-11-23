@@ -3,10 +3,7 @@ layout: page
 title: About
 ---
 
-### Vulkey_Chen
-
-一名信息安全爱好者，喜欢研究Web应用安全测试和漏洞挖掘；
-
-米斯特安全团队联合创始人之一、米斯特安全攻防实验室负责人。
-
-站内事务联系`admin[#]gh0st.cn` \ 团队事务联系 `gh0stkey[#]hi-ourlife.com`
+### C1h2e1
+![icon]({{ "/assets/avatar.jpg"|icon}})
+信息安全领域摸爬滚打的小菜鸡，博客建立于2018年11月记录一些自己想做的事和感想，那么技术的狂热就在此时开始
+Strive for every day  
