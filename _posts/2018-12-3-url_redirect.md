@@ -3,6 +3,11 @@ layout: post
 title:  URL跳转到webview安全
 date: 2018-12-6 8:25:6.000000000 +08:00
 ---
+
+### 换主题了从gh0stkey表哥博客直接搬的，表哥博客gh0st.cn
+
+一首纯音乐送给大家(找了半天就这首能生成外链)
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=“330” height="86" src="//music.163.com/outchain/player?type=2&id=256447&auto=1&height=66"></iframe>
 # 起因
 在一次测试中我用burpsuite搜索了关键词url找到了某处url
 我测试了一下发现waf拦截了指向外域的请求，那么开始尝试绕过。所以有了这次的文章
@@ -204,7 +209,7 @@ weixin://dl/features 功能插件
 果然还是收费，因为写文章的时候比较早他们可能没有上班所以就换个地方找一下
 ![redirect]({{ "/assets/images/url/5.png"|redirect}})
 我们加一下这个客服的qq
-![screenshot]({{ "/assets/images/url/5.png"|screenshot}})
+![screenshot]({{ "/assets/images/url/6.png"|screenshot}})
 果然是我想象得那样
 `
 weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4
