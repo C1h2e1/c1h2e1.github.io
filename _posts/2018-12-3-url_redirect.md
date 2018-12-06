@@ -58,7 +58,7 @@ http:\\\//baidu.com
 这样的都会跳转到百度
 
 #	url跳转到webview安全问题
-我们这次的漏洞我在手机上测试的时候发现他会跳转伪协议
+我们这次的漏洞我在手机上测试的时候发现利用APP url Scheme
 也就是`xxxx://app/webview?url=xxxxxxx`
 其实这里的任意webview跳转已经构成漏洞了但是我想更加深入一下
 看到webview我想到了利用file协议读取用戶的敏感信息那么下面的两篇文章可以补一下基础
