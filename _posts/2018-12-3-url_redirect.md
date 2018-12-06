@@ -19,8 +19,8 @@ date: 2018-12-4 00:25:6.000000000 +08:00
 +	问号绕过
 可以使用Referer的比如`https://baidu.com` 可以`https://任意地址/?baidu.com`
 
-+	# 绕过
-利用# 表示HTML中的锚点 `http://127.0.0.1/#qq.com` 
++	锚点 绕过
+利用#会被浏览器解释成HTML中的锚点 `http://127.0.0.1/#qq.com` 
 
 +	xip.io绕过
 `http://www.baidu.com.127.0.0.1.xip.io/` 这样之后会访问127.0.0.1
@@ -58,6 +58,7 @@ http:\\\//baidu.com
 其实这里的任意webview跳转已经构成漏洞了但是我想更加深入一下
 看到webview我想到了利用file协议读取用戶的敏感信息那么下面的两篇文章可以补一下基础
 [使用app内置webview 打开TextView中的超链接](https://www.jianshu.com/p/2c6c55b48238)
+
 [乌云案例](http://www.anquan.us/static/bugs/wooyun-2015-0114241.html)
 我们先用file://协议读取一下测试文件试一下
 ![host]({{ "/assets/images/url/2.png"|host}})
