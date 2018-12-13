@@ -19,13 +19,13 @@ date: 2018-12-6 8:25:6.000000000 +08:00
 
 +	@  绕过
 这个是利用了我们浏览器的特性，现在除了Firefox浏览器大部分都可以完成这样跳转下面是跳转的动态图
-![aite_redirect]({{ "/assets/images/url/1.gif"|redirect}})
+![aite_redirect]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.gif"|redirect}})
 
 +	问号绕过
 可以使用Referer的比如`https://baidu.com` 可以`https://任意地址/?baidu.com`
 
 +	锚点 绕过
-利用#会被浏览器解释成HTML中的锚点 `http://127.0.0.1/#qq.com` 
+利用#会被浏览器解释成HTML中的锚点 `http://127.0.0.1/#qq.com`
 
 +	xip.io绕过
 `http://www.baidu.com.127.0.0.1.xip.io/` 这样之后会访问127.0.0.1
@@ -37,7 +37,7 @@ When your computer looks up a xip.io domain, the xip.io
 DNS server extracts the IP address from the domain and
 sends it back in the response.
 ```
-![xip]({{ "/assets/images/url/1.png"|xip}})
+![xip]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.png"|xip}})
 在公网上运行自定义的dns服务器，用他的服务器提取IP地址，在响应中将他取回
 
 +	反斜杠绕过
@@ -180,7 +180,7 @@ function execute() {
 
 # 突然换目标
 这是我想到了weixin的协议
-`weixin://`看了官方的文档之后我发现了微信支持如下操作 
+`weixin://`看了官方的文档之后我发现了微信支持如下操作
 ```weixin
 weixin://dl/general
 weixin://dl/favorites 收藏
@@ -219,4 +219,4 @@ weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4
 成功打开微信并跳转~~~~
 
 # 反思
-在一次普通的漏洞利用中利用姿势绝不会普通，不断积累自己。 
+在一次普通的漏洞利用中利用姿势绝不会普通，不断积累自己。

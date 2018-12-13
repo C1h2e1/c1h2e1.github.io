@@ -24,16 +24,16 @@ date: 2018-11-18 10:28:24.000000000 +08:00
 ![csrf_2]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_2.png"|csrf_2}})
 上面这个例子是我在wooyun找到的以往的一个csrf漏洞，那么我们画一张流程图模拟一下他的挖掘流程和大体思路。
 也就是  发现发微博的功能点----尝试利用此功能点发微博----微博发表成功----尝试绕过Referer的限制----绕过referer验证编写Poc进行利用
-![csrf_3]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/"|csrf_3}})
+![csrf_3]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_3.png"|csrf_3}})
 也就是这样的流程我们下面给大家分开来讲这个流程
 +	发现功能点：我想说的是每个点都有可能是csrf的利用点，但敏感程度成了我们的难点，比如我们上面的这个微博的发布，这就算一个比较敏感的功能点了，我给大家列举几个比较明显的点`订单下单处 修改敏感信息处 删除信息处 绑定处 发送信息处 等等`大家这是发现里面有增的操作比如`订单下单`也有改的操作`修改账号密码`也有删的操作`删除信息处`关于查的话我会在后面给大家写读取型的csrf漏洞。那么我们发现完了功能点之后就可以进行下面的操作了
 +	尝试使用此功能点：测试此处的时候我们只需要进行模拟的使用这个功能点就好了，但是我们这里就要主要一下token 以及referer的验证了我们把这个内容放在最后讲。我们就假设此处没有任何验证机制我们只需要发送相应数据包就可以完成敏感操作的就好了
-+	编写Poc及利用：这里我推荐大家使用burpsuite的csrf POC自动生成的工具，下面我给大家演示一下使用方法![csrf_4]({{ "/assets/images/csrf_1/csrf_4.png"|csrf_4}})我们按照上述步骤点击就可以生成csrf的poc，同时burpsuite还为我们提供了直接的测试功能可以直接在浏览器中打开url进行测试![csrf_5]({{ "/assets/images/csrf_1/csrf_5.png"|csrf_5}})
++	编写Poc及利用：这里我推荐大家使用burpsuite的csrf POC自动生成的工具，下面我给大家演示一下使用方法![csrf_4]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_4.png"|csrf_4}})我们按照上述步骤点击就可以生成csrf的poc，同时burpsuite还为我们提供了直接的测试功能可以直接在浏览器中打开url进行测试![csrf_5]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_5.png"|csrf_5}})
 +	挖掘思路总结：个人觉得csrf的增删改三处操作的挖掘难度不是很大只是有个正常的流程就可以挖到，最后我会去超链接几个关于csrf的案例大家
 
 #### Read type Csrf Vulnerability
 +	1.Jsonp劫持 ：首先我们讲一下什么是jsonp [jsonp](https://zh.wikipedia.org/wiki/JSONP)`JSONP（JSON with Padding）是数据格式JSON的一种“使用模式”，可以让网页从别的网域要数据。另一个解决这个问题的新方法是跨来源资源共享。`jsonp的作用也就是做跨域资源共享的，而这里我们又要引入一个函数那就是callback函数[回调函数](https://zh.wikipedia.org/wiki/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0)这里的解释可能看不懂，其实我们只需要把他理解成一个回调给我们的参数就好了，我们只需要有这个参数在去读取这个参数就可以进行jsonp的劫持了，我们这里还是举一个例子给大家做演示
-	+	漏洞案例:![csrf_6]({{ "/assets/images/csrf_1/csrf_6.png"|csrf_6}})我们这个位置的漏洞是劫持用户得一些个人信息我们发现url上有一个参数是`callback=aaa`没错这里就是回调函数，我们就可以根据他来劫持jsonp的数据了那么我们就可以构造如下poc
+	+	漏洞案例:![csrf_6]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_6.png"|csrf_6}})我们这个位置的漏洞是劫持用户得一些个人信息我们发现url上有一个参数是`callback=aaa`没错这里就是回调函数，我们就可以根据他来劫持jsonp的数据了那么我们就可以构造如下poc
 	```
 	<script>
 function aaa(json)
