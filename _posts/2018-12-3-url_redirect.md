@@ -66,7 +66,7 @@ http:\\\//baidu.com
 
 [乌云案例](http://www.anquan.us/static/bugs/wooyun-2015-0114241.html)
 我们先用file://协议读取一下测试文件试一下
-![host]({{ "/assets/images/url/2.png"|host}})
+![host]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/2.png"|host}})
 我们可以看到成功读取了手机的敏感host文件，但不是只要读取成功就能完成利用的，我们还需要设计到发送并读取
 这边我又测试了一下JavaScript的情况，发现开启
 那么我们在vps上搭建一下利用代码
@@ -203,13 +203,13 @@ weixin://dl/features 功能插件
 `weixin://dl/business/?ticket=xxxxxxxxxxxxxxxxx`
 那么这个ticket哪里来呢？？？
 我在t00ls上看到一篇同样关于这个微信协议的分析他说是有人在卖api我百度了一下找到了这个地址
-![seoniao]({{ "/assets/images/url/3.png"|seoniao}})
+![seoniao]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/3.png"|seoniao}})
 我们注册并登陆尝试一下跳转
-![seoniao]({{ "/assets/images/url/4.png"|seoniao}})
+![seoniao]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/4.png"|seoniao}})
 果然还是收费，因为写文章的时候比较早他们可能没有上班所以就换个地方找一下
-![redirect]({{ "/assets/images/url/5.png"|redirect}})
+![redirect]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/5.png"|redirect}})
 我们加一下这个客服的qq
-![screenshot]({{ "/assets/images/url/6.png"|screenshot}})
+![screenshot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/6.png"|screenshot}})
 果然是我想象得那样
 `
 weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4
