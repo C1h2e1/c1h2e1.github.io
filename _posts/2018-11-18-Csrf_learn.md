@@ -5,10 +5,9 @@ date: 2018-11-18 10:28:24.000000000 +08:00
 ---
 第一篇博客 希望几年以后还能在信息安全的道路上，每15天更新一次
 
-+	2018-11月18日1点20分 写给马上十六岁的自己：不忘初心，坚持理想，不退缩，keep real，热爱技术，求知向学
+---
 
-
-##前面是扫盲后面会讲利用的姿势关于进阶的技巧我会在写一篇
+####前面是扫盲后面会讲利用的姿势关于进阶的技巧我会在写一篇
 # What is CSRF?
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=554244265&auto=0&height=66"></iframe>
 +	扫盲
@@ -17,8 +16,9 @@ date: 2018-11-18 10:28:24.000000000 +08:00
  `小明 和 小红 和 面部解锁 `的故事
 一天小明去小红家玩，小红这时在睡觉没有发现小明偷偷拿起了她的手机，因为她的手机有面部解锁，只需要刷一下小红的脸就可以了，机制的小明在小红睡觉的时候吧手机放在她面前。小红在睡梦中受到了这次攻击，手机解锁成功，而我们应该如何防护这一安全问题呢？这时某家手机厂商发布了新的技术，这个技术就是当你解锁的时候验证手机的来源，比如是否能匹配你的手表或者戒指其他东西，来证明是你主动得解锁，也就是证明解锁的人是你，这样小明得利用就比较难了，但是也并不是没有办法，比如使用偷走小红的手表等等，此时手机厂商又推出了新的功能那就是用户的凭证，每一次都会进行凭证的验证，当每一次用户解锁手机的时候手表需要从服务端取回数据，然后再用手表中的作为凭证去做面容解锁，而且每一个数据只能使用一次。这样不能仅仅靠小明的那一双手能够越过的了，但是也不是没有办法，那么故事讲完了我们来分析一下各个事物在`CSRF`攻击中相当于什么东西吧~首先
 小明攻击者 小红受害者这里我们把小红的脸部也就是我们的`cookie`或者是一种识别我们用户的标识。手表这样用于验证也就是`Referer` 那么`token`就是服务端生成的数据了
+---
 
-# How to dig csrf Vulnerability ?
+# How to find csrf Vulnerability ?
 +	实例：我们用一个csrf实例来进入我们的讲解过程[wooyun-csrf实例](http://www.anquan.us/static/bugs/wooyun-2015-0164067.html)
 ![csrf_1]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_1.png"|csrf_1}})
 ![csrf_2]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_2.png"|csrf_2}})
@@ -31,7 +31,9 @@ date: 2018-11-18 10:28:24.000000000 +08:00
 +	编写Poc及利用：这里我推荐大家使用burpsuite的csrf POC自动生成的工具，下面我给大家演示一下使用方法![csrf_4]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_4.png"|csrf_4}})我们按照上述步骤点击就可以生成csrf的poc，同时burpsuite还为我们提供了直接的测试功能可以直接在浏览器中打开url进行测试![csrf_5]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_5.png"|csrf_5}})
 +	挖掘思路总结：个人觉得csrf的增删改三处操作的挖掘难度不是很大只是有个正常的流程就可以挖到，最后我会去超链接几个关于csrf的案例大家
 
-#### Read type Csrf Vulnerability
+---
+
+# Read type Csrf Vulnerability
 +	1.Jsonp劫持 ：首先我们讲一下什么是jsonp [jsonp](https://zh.wikipedia.org/wiki/JSONP)`JSONP（JSON with Padding）是数据格式JSON的一种“使用模式”，可以让网页从别的网域要数据。另一个解决这个问题的新方法是跨来源资源共享。`jsonp的作用也就是做跨域资源共享的，而这里我们又要引入一个函数那就是callback函数[回调函数](https://zh.wikipedia.org/wiki/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0)这里的解释可能看不懂，其实我们只需要把他理解成一个回调给我们的参数就好了，我们只需要有这个参数在去读取这个参数就可以进行jsonp的劫持了，我们这里还是举一个例子给大家做演示
 	+	漏洞案例:![csrf_6]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/csrf_6.png"|csrf_6}})我们这个位置的漏洞是劫持用户得一些个人信息我们发现url上有一个参数是`callback=aaa`没错这里就是回调函数，我们就可以根据他来劫持jsonp的数据了那么我们就可以构造如下poc
 	```
@@ -48,8 +50,10 @@ function aaa(json)
 ![csrf_8]({{ "/assets/images/csrf_1/csrf_8.png"|csrf_8}})和jsonp的作用差不多，只不过是方式有所改变，那么我们在这个漏洞中的关键点就是Orgin这个参数的传递了，有时候我们需要自己添加有时候他有，而有时候他会通过某些参数传递，可能这么说不太理解我还是举个例子
 	+	漏洞案例：![csrf_9]({{ "/assets/images/csrf_1/csrf_9.png"|csrf_9}})这里我们还要讲一下他的Poc [cors—Poc](https://github.com/nccgroup/CrossSiteContentHijacking)git 下来然后在本地搭建起来就好了，用法就只需要想像图片中一样讲我们的url和POST DATA传过去就好了。
 	+	挖掘思路：添加Ogrin头部信息看返回的数据里面有没有Access-Control-Allow-Orgin这个参数出现如果有尝试让他变成任意的url只要这样就可以进行cors劫持了。
+	
+---
 
-#### GET Rerferer bypass
+# GET Rerferer bypass
 首先我们假设我们请求的目标主机是`https://dafsec.org`
 ![csrf_10]({{ "/assets/images/csrf_1/csrf_10.png"|csrf_10}})
 
@@ -58,6 +62,6 @@ function aaa(json)
 +	3.修改域名：`https://adafsec.c1h2e1.org`  `https://0dafsec.c1h2e1.org` `https://Ddafsec.c1h2e1.org`利用这种方法也是绕过referer验证的好方法
 +	4.参数： `https://c1h2e1.org/?https://dafsec.org`
 
-
-#### Last
+---
+# END
 简单的总结了一下csrf漏洞，第一篇博客经验不足，望见谅
