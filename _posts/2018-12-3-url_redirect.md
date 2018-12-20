@@ -8,12 +8,13 @@ date: 2018-12-6 8:25:6.000000000 +08:00
 
 一首纯音乐送给大家(找了半天就这首能生成外链)
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=256447&auto=0&height=66"></iframe>
+
 # 起因
 在一次测试中我用burpsuite搜索了关键词url找到了某处url
 我测试了一下发现waf拦截了指向外域的请求，那么开始尝试绕过。所以有了这次的文章
 
 # 经过
-第一个我测试的url是`https://mall.m.xxxxxxx.com/jump.html?url=https://baidu.com`我打开成功跳转以为跳转成功，**but baidu.com是在白名单的**所以我就只能想办法去绕过他那么我经过了几次绕过之后发现`https://mall.m.xxxxxxx.com/jump.html?url=https:/\c1h2e1.github.io`跳转成功，这是我觉得有必要总结一下url的跳转绕过思路了，那么开始吧！！
+第一个我测试的url是`https://mall.m.xxxxxxx.com/jump.html?url=https://baidu.com`我打开成功跳转以为跳转成功，but baidu.com是在白名单的所以我就只能想办法去绕过他那么我经过了几次绕过之后发现`https://mall.m.xxxxxxx.com/jump.html?url=https:/\c1h2e1.github.io`跳转成功，这是我觉得有必要总结一下url的跳转绕过思路了，那么开始吧！！
 
 # 正文
 
@@ -58,7 +59,7 @@ http:\\\//baidu.com
 这样的都会跳转到百度
 
 #	url跳转到webview安全问题
-我们这次的漏洞我在手机上测试的时候发现利用APP url Scheme
+我们这次的漏洞我在手机上测试的时候发现利用APP url Schema
 也就是`xxxx://app/webview?url=xxxxxxx`
 其实这里的任意webview跳转已经构成漏洞了但是我想更加深入一下
 看到webview我想到了利用file协议读取用戶的敏感信息那么下面的两篇文章可以补一下基础
@@ -211,9 +212,7 @@ weixin://dl/features 功能插件
 我们加一下这个客服的qq
 ![screenshot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/6.png"|screenshot}})
 果然是我想象得那样
-`
-weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4
-`
+`weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4`
 我们手机打开一下我得测试网页
 `<a href="weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4">demo</a>`
 成功打开微信并跳转~~~~
