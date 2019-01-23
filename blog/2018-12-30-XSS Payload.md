@@ -1,8 +1,6 @@
-![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg)
-昨晚刷twitter刷到的图片很有意思，happiness！！！
 #	起因
 时间 2018年12月29日11:39，今天我做了一次技术分享议题是《My XSS Bypass Cheat sheets》，欢迎各位朋友加入我们的技术分享交流群
-![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg.png)
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg)
 XSS我已经写过一篇了，上一个是Payload，遂今天写一篇比较新的思路，也算是给2018年一个交代。
 
 #	案例1
