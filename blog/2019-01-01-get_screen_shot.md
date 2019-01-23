@@ -1,8 +1,4 @@
----
-layout: post
-title:  Get WebPage Screen Shot
-date: 2019-1-1 10:02:24.000000000 +08:00
----
+
 #	起因
 在twitter刷这玩找到了一个有趣的东西
 是一个网站
@@ -91,4 +87,3 @@ with open(target_file,'r') as file:
 
 # 总结
 眼光放长，思路放开，把所有钱都赚进口袋来  押韵  ：)
-

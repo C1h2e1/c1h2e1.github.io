@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 
 config.codekit
+.DS_Store
+.DS_Store

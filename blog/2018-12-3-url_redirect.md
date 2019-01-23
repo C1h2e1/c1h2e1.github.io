@@ -1,13 +1,3 @@
----
-layout: post
-title:  URL跳转到Webview安全
-date: 2018-12-6 8:25:6.000000000 +08:00
----
-
-### 换主题了从gh0stkey表哥博客直接搬的，表哥博客gh0st.cn
-
-一首纯音乐送给大家(找了半天就这首能生成外链)
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=256447&auto=0&height=66"></iframe>
 
 # 起因
 在一次测试中我用burpsuite搜索了关键词url找到了某处url

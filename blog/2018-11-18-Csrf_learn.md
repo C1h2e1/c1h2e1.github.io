@@ -1,15 +1,8 @@
----
-layout: post
-title:  Csrf的读取—增删改查
-date: 2018-11-18 10:28:24.000000000 +08:00
----
-第一篇博客 希望几年以后还能在信息安全的道路上，每15天更新一次
 
----
 
 ####前面是扫盲后面会讲利用的姿势关于进阶的技巧我会在写一篇
 # What is CSRF?
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=554244265&auto=0&height=66"></iframe>
+
 +	扫盲
 `CSRF`(Cross-site request forgery)跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF
 这么听起来好像不是那么好理解，我们举个例子
@@ -50,7 +43,7 @@ function aaa(json)
 ![csrf_8]({{ "/assets/images/csrf_1/csrf_8.png"|csrf_8}})和jsonp的作用差不多，只不过是方式有所改变，那么我们在这个漏洞中的关键点就是Orgin这个参数的传递了，有时候我们需要自己添加有时候他有，而有时候他会通过某些参数传递，可能这么说不太理解我还是举个例子
 	+	漏洞案例：![csrf_9]({{ "/assets/images/csrf_1/csrf_9.png"|csrf_9}})这里我们还要讲一下他的Poc [cors—Poc](https://github.com/nccgroup/CrossSiteContentHijacking)git 下来然后在本地搭建起来就好了，用法就只需要想像图片中一样讲我们的url和POST DATA传过去就好了。
 	+	挖掘思路：添加Ogrin头部信息看返回的数据里面有没有Access-Control-Allow-Orgin这个参数出现如果有尝试让他变成任意的url只要这样就可以进行cors劫持了。
-	
+
 ---
 
 # GET Rerferer bypass

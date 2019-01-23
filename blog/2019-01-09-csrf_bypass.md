@@ -1,8 +1,4 @@
----
-layout: post
-title:  CSRF Bypass!
-date: 2019-1-8 22:02:24.000000000 +08:00
----
+
 我的twitter @C1h2e11每天固定转载优质文章和思路，欢迎关注！
 #	 起因
 我最近在研究国外的各种新思路，最近看到了一篇CSRF的相关文章，只是写了各种Poc，我在写之前查找了大量的案例，这也就是为什么说技术分享的受益最大永远都是分享者，在这些案例里面我发现大多都是没有CSRF token或者其他防护机制的，同样的我查找了很多文章关于CSRF攻击，也并没有找到我想要的，于是就有了今天的文章
@@ -45,7 +41,7 @@ date: 2019-1-8 22:02:24.000000000 +08:00
 利用了Referer泄露获取CSRF token 再利用CSRF token进行CSRF攻击
 
 ---
-Use Bad PDF 
+Use Bad PDF
 `get() and post() methods of FormCalc allow to ex-filtrate CSRF-token`
 这是我在twitter找到的一个文档上的原文
 其实就是我们的PDF被浏览器解析，因为插件的原因可以进行请求，我们上传恶意的PDF文件在目标网站这样可以绕过referer甚至CSRF token ，这个漏洞和去年(2018)阿里的Chrome支持的PDF跳转是类似的。
@@ -156,4 +152,3 @@ https://github.com/TheRook/CSRF-Request-Builder
 
 #	反思
 沉淀!
-
