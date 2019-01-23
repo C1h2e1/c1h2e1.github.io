@@ -70,10 +70,8 @@ XSS+CSRF
 
 # 浓缩
 我在寻找更多bypass手段的时候我找到了这个调查
-![CSRF]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/CSRF/CSRF1.png"|CSRF}})
-
-![CSRF]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/CSRF/CSRF2.png"|CSRF}})
-
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/CSRF/CSRF1.png)
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/CSRF/CSRF2.png)
 那么我们真正在实战中用到比较多的就是
 
 -	删除CSRF token

@@ -1,5 +1,6 @@
 
-还是一波群的广告，欢迎各位朋友加入我们的技术分享交流群![qrcode]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg"|qrcode}})
+还是一波群的广告，欢迎各位朋友加入我们的技术分享交流群
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg)
 
 #	起因
 国外的一个文档里面的logic漏洞里面有一个timing attack 我google了一下，没找到什么有用的，在知乎的一个问答上看到了相关的内容，所以研究一下
@@ -14,7 +15,7 @@
 所以我们可以根据返回时间进行猜解，这类漏洞在web应用很少有人挖以至于我找了国内的漏洞并没有发现，在twitter上发现了一个演讲，但是没有视频，根据图片上的内容我找到了一篇相关文章
 
 #	Python '==' Vulnerable
-![timing]({{"http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/timing/timing-1.png"|timing}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/timing/timing-1.png)
 从这个tweet中我开始搜寻python'==' 漏洞
 还好我运气比较好找到了这篇文章
 

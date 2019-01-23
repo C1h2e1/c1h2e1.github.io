@@ -10,8 +10,7 @@
 
 +	@  绕过
 这个是利用了我们浏览器的特性，现在除了Firefox浏览器大部分都可以完成这样跳转下面是跳转的动态图
-![aite_redirect]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.gif"|redirect}})
-
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.gif)
 +	问号绕过
 可以使用Referer的比如`https://baidu.com` 可以`https://任意地址/?baidu.com`
 
@@ -28,7 +27,7 @@ When your computer looks up a xip.io domain, the xip.io
 DNS server extracts the IP address from the domain and
 sends it back in the response.
 ```
-![xip]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.png"|xip}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/1.png)
 在公网上运行自定义的dns服务器，用他的服务器提取IP地址，在响应中将他取回
 
 +	反斜杠绕过
@@ -57,7 +56,7 @@ http:\\\//baidu.com
 
 [乌云案例](http://www.anquan.us/static/bugs/wooyun-2015-0114241.html)
 我们先用file://协议读取一下测试文件试一下
-![host]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/2.png"|host}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/2.png)
 我们可以看到成功读取了手机的敏感host文件，但不是只要读取成功就能完成利用的，我们还需要设计到发送并读取
 这边我又测试了一下JavaScript的情况，发现开启
 那么我们在vps上搭建一下利用代码
@@ -194,13 +193,12 @@ weixin://dl/features 功能插件
 `weixin://dl/business/?ticket=xxxxxxxxxxxxxxxxx`
 那么这个ticket哪里来呢？？？
 我在t00ls上看到一篇同样关于这个微信协议的分析他说是有人在卖api我百度了一下找到了这个地址
-![seoniao]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/3.png"|seoniao}})
-我们注册并登陆尝试一下跳转
-![seoniao]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/4.png"|seoniao}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/3.png)我们注册并登陆尝试一下跳转
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/4.png)
 果然还是收费，因为写文章的时候比较早他们可能没有上班所以就换个地方找一下
-![redirect]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/5.png"|redirect}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/5.png)
 我们加一下这个客服的qq
-![screenshot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/6.png"|screenshot}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/6.png)
 果然是我想象得那样
 `weixin://dl/business/?ticket=taa597ccdcdf00ecb865d9e04904bbff4`
 我们手机打开一下我得测试网页

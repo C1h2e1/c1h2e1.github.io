@@ -6,9 +6,9 @@
 
 
 # 正文
-![shot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot1.png"|shot}})!
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot1.png)
 我们在网站的后面加上我博客看一下
-![shot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot2.png"|shot}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot2.png)
 这就让我想起了Aquatone的gather 他的功能就是获取网页截图。我想都不想就写个轮子试试
 
 
@@ -44,8 +44,8 @@ def create_html(filename):
 ```
 这样就完成了主体功能了，因为我怕对这个网站造成伤害，所以我就没有改多线程
 下面的是我运行对微博的子域名进行收集的一些截图
-![shot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot3.png"|shot}})
-![shot]({{ "http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot4.png"|shot}})
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot3.png)
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/screenshot/shot4.png)
 由于编码问题，所以出现这样的问题
 
 我们的最终脚本如下
