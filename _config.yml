@@ -1,0 +1,46 @@
+# Basic
+title:  C1h2e1's blog
+subtitle: 记录我的漫漫信息安全路
+welcome_message: 路漫漫其修远兮，吾将上下而求索
+creator: <a href="http://c1h2e1.github.io">@C1h2e1</a>
+
+
+permalink: /:year/:month/:title/
+
+# Format
+highlighter: rouge
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: blue
+
+# The blog button should not be removed.
+blog_button:
+    title: 进入博客
+    description: Visit blog
+
+# Navigation buttons in the front page.
+nav:
+    - {title: C1h2e1, description: My Projects, url: 'http://c1h2e1.github.io'}
+    # - {title: Another Button, description: A button, url: 'http://example.com'}
+
+# Pagination
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: vno-jekyll
+    # duoshuo:
+
+# Social
+social:
+    github: C1h2e1
+    twitter: C1h2e11
+    gplus: 107108267983477358170
+    mail: c1h2e1@dafsec.org
+
+# Google Analytics
+ga:
+    # id: your_ga_id
+    # host: your_host
