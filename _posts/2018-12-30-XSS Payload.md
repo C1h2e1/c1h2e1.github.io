@@ -35,19 +35,19 @@ https://www.amolbaikar.com/xss-on-facebooks-acquisition-oculus-cdn/
 这是同一个地方的两处XSS 日期相隔了一年左右，我们先从老的XSS入手分析
 他没有写多少内容但是我们可一看一下他YouTube的视频
 
-![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-4.png)
+![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-4.jpg)
 
 在上传头像的位置进行文件上传
-![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-5.png)
+![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-5.jpg)
 修改后缀名为html之后上传，打开返回的URL成功弹窗
-![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-6.png)
+![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-6.jpg)
 这是2017年的漏洞
 下面我们再看一下2018的这个
 ```
 Remove the "/v/" parameter from the URL and modify the file extension. (".jpg" to ".html")
 ```
 直接上传带有恶意代码的jpg，然后访问url
-![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-7.png)
+![PIC](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/xss/xss1/xss-7.jpg)
 可以看到我们上传之后还是显示jpg的后缀名，是上传之后修改后缀名
 然后将`/v/`去掉
 原url
