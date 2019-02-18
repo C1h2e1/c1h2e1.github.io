@@ -35,7 +35,6 @@ https://gh0st.cn/archives/2018-10-28/2
 https://gh0st.cn/archives/2018-10-28/1
 ```
 #举栗子
-- 案例一
 `wfuzz -z file,starter.txt -p 192.168.31.26:1080:SOCKS5 --hs "Cannot" https://foo.domain.com/FUZZ`
 当时我fuzz的命令,因为是国外的网站所以加了代理，过滤了返回`Cannot`的返回包当我等待返回结果的时候他返回了`/user/login.action`当我访问的时候返回的具体内容我没有保存，大概意思是`User Not found`然后我停下了wfuzz开始进行`/user/`目录的fuzz这是我fuzz了很久，基本上都是返回这样，然后打开了user目录，发现他直接给我返回了整站的用户数据由于是私有项目而且涉及用户比较多，这里就不放截图了现在回头看我上面的twitter截图，是不是觉得很对？
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz1.png)
@@ -50,30 +49,28 @@ https://gh0st.cn/archives/2018-10-28/1
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz7.png)
 先从Burpsuite的扩展程序CO2说起，关于CO2的话相信不需要太多介绍了，Sqlmapper模块很好，对于我这种注入菜的很的来说简直就是福音，而`CeWler`的功能是参数提取，比如我们在Http history 里找返回包右键发送到CeWler模块就可以进行参数提取了，在实战中的用处很大，可以把参数提取出来保存做参数字典，这样的字典更高效。
 
-- 案例二
+
 ##Jsonp劫持
 一次众测中我的目标网站是金融站，在个人中心的很多业务都是json返回，有很多的敏感信息。我尝试Fuzz了callback函数结果没有成功，之后我在另一个子域名进行了参数提取发现了`_cb_`在添加之后发现成功的回调，然后劫持成功。
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz8.png)
 
-- 案例
+
 ##Hidden XSS
 这个案例不是我的，原文链接`https://markitzeroday.com/xss/finding/2018/02/03/hidden-xss.html`
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz4.png)
 这里原作者用到了`Nikto`这里他发挥的作用在于目录的爆破其实如果用其他工具也可以代替，返回报告发现了`/test/`目录，这是访问了test目录
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz5.png)
 返回了NULL，这是他进行了进一步的fuzz，也就是参数fuzz
+
 ```
 $ wfuzz -w /usr/share/wordlists/dirb/common.txt --hh 53 'http://rob-sec-1.com/test/?FUZZ=XSSpayload'
-********************************************************
-* Wfuzz 2.2.3 - The Web Fuzzer                         *
-********************************************************
 
 Target: HTTP://rob-sec-1.com/test/?FUZZ=XSSpayload
 Total requests: 4614
 
-==================================================================
+
 ID	Response   Lines      Word         Chars          Payload    
-==================================================================
+
 
 02127:  C=200      9 L	       8 W	     84 Ch	  "item"
 
@@ -90,3 +87,6 @@ Requests/sec.: 309.0369
 ---
 
 #漏洞挖掘与Fuzz之Bypass
+
+##SQL injection Bypass
+关于这个33期已经有大咖分享过了
