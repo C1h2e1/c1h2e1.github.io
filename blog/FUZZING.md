@@ -63,12 +63,12 @@ https://gh0st.cn/archives/2018-10-28/1
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz5.png)
 返回了NULL，这是他进行了进一步的fuzz，也就是参数fuzz
 ```
-$ wfuzz -w /usr/share/wordlists/dirb/common.txt --hh 53 'http://rob-sec-1.com/test/?FUZZ=<script>alert("xss")</script>'
+$ wfuzz -w /usr/share/wordlists/dirb/common.txt --hh 53 'http://rob-sec-1.com/test/?FUZZ=XSSpayload'
 ********************************************************
 * Wfuzz 2.2.3 - The Web Fuzzer                         *
 ********************************************************
 
-Target: HTTP://rob-sec-1.com/test/?FUZZ=<script>alert("xss")</script>
+Target: HTTP://rob-sec-1.com/test/?FUZZ=XSSpayload
 Total requests: 4614
 
 ==================================================================
@@ -82,10 +82,11 @@ Processed Requests: 4614
 Filtered Requests: 4613
 Requests/sec.: 309.0369
 ```
-在fuzz过后发现了item参数，这是访问`http://rob-sec-1.com/test/?item=<script>alert("xss")</script>`成功弹窗
+
+在fuzz过后发现了item参数，这是访问`http://rob-sec-1.com/test/?item=XSSpayload`成功弹窗
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz6.png)
 很好的体现参数Fuzz与目录Fuzz如果这个item参数有过滤那就很完美的体现了所有的核心思想: D
-
+(因为博客不能写script标签，所有替换成了XSSpayload)
 ---
 
 #漏洞挖掘与Fuzz之Bypass
