@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://c1h2e1.github.io
 date_format: "ordinal"
 title: C1h2e1's Blog
 subtitle: "漫漫安全路"
@@ -81,7 +81,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: mzlogin/mzlogin.github.io
+repository: c1h2e1/c1h2e1.github.io
 
 # ---------------- #
 #      Comments    #
