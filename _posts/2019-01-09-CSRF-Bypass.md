@@ -1,4 +1,10 @@
-
+---
+layout: post
+title: CSRF Bypass
+categories: Pentest
+description: CSRF Bypass
+keywords: Pentest
+---
 我的twitter @C1h2e11每天固定转载优质文章和思路，欢迎关注！
 #	 起因
 我最近在研究国外的各种新思路，最近看到了一篇CSRF的相关文章，只是写了各种Poc，我在写之前查找了大量的案例，这也就是为什么说技术分享的受益最大永远都是分享者，在这些案例里面我发现大多都是没有CSRF token或者其他防护机制的，同样的我查找了很多文章关于CSRF攻击，也并没有找到我想要的，于是就有了今天的文章

@@ -1,3 +1,10 @@
+---
+layout: post
+title: XSS payload cheat sheets
+categories: Pentest
+description: XSS payload cheat sheets
+keywords: Pentest
+---
 #	起因
 时间 2018年12月29日11:39，今天我做了一次技术分享议题是《My XSS Bypass Cheat sheets》，欢迎各位朋友加入我们的技术分享交流群
 ![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg)

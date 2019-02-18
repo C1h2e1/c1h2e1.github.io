@@ -1,46 +1,125 @@
-# Basic
-title:  C1h2e1's blog
-subtitle: 记录我的漫漫信息安全路
-welcome_message: 路漫漫其修远兮，吾将上下而求索
-creator: <a href="http://c1h2e1.github.io">@C1h2e1</a>
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl:
+url: https://mazhuang.org
+date_format: "ordinal"
+title: C1h2e1's Blog
+subtitle: "漫漫安全路"
+description: "C1h2e1's Blog"
+keywords: AKA画家
+timezone: Asia/Qinhuangdao
+encoding: "utf-8"
+side_bar_repo_limit: 5
 
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: Zhuang Ma
+organization:
+organization_url:
+github_username: C1h2e1
+location: Qinghuangdao, China
+email: cc1h2e1@gmail.com
 
-permalink: /:year/:month/:title/
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: 首页
 
-# Format
+  -
+    href: /categories/
+    label: 分类
+
+#   -
+#     href: /archives/
+#     label: 归档
+
+  -
+    href: /wiki/
+    label: 维基
+
+  -
+    href: /links/
+    label: 链接
+
+  -
+    href: /about/
+    label: 关于
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Jekyll      #
+# ---------------- #
+markdown: kramdown
+kramdown:
+    input: GFM
 highlighter: rouge
-
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: blue
-
-# The blog button should not be removed.
-blog_button:
-    title: 进入博客
-    description: Visit blog
-
-# Navigation buttons in the front page.
-nav:
-    - {title: C1h2e1, description: My Projects, url: 'http://c1h2e1.github.io'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
-
-# Pagination
-gems: [jekyll-paginate]
 paginate: 10
-paginate_path: "page/:num/"
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+gems:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+#     - jekyll-mentions
+collections:
+    wiki:
+        output: true
+        permalink: /wiki/:path/
 
-# Comment
-comment:
-    disqus: vno-jekyll
-    # duoshuo:
+repository: mzlogin/mzlogin.github.io
 
-# Social
-social:
-    github: C1h2e1
-    twitter: C1h2e11
-    gplus: 107108267983477358170
-    mail: c1h2e1@dafsec.org
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://disqus.com
+disqus:
+    username:
+# https://imsun.net/posts/gitment-introduction/
+gitment:
+    owner: mzlogin
+    repo: blog-comments
+    oauth:
+        client_id: d2e1cbbd298958076462
+        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: mzlogin
+    repo: blog-comments
+    clientID: d2e1cbbd298958076462
+    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : false
 
-# Google Analytics
-ga:
-    # id: your_ga_id
-    # host: your_host
+# ---------------- #
+#      Search      #
+# ---------------- #
+simple_jekyll_search:
+    # 是否支持全文搜索
+    fulltext: false
+    # 最多显示多少条搜索结果
+    limit: 10
+
+# ---------------- #
+#    Analytics     #
+# ---------------- #
+google:
+    analytics_id: UA-80669434-1
