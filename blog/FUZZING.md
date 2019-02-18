@@ -90,3 +90,35 @@ Requests/sec.: 309.0369
 
 ##SQL injection Bypass
 关于这个33期已经有大咖分享过了
+`https://www.bugbank.cn/live/view.html?id=109333`
+就是特殊字符注释等等的fuzz然后看回显
+
+##Open redirect
+我用的字典也在我博客里能找到，很好用。就是把whitelisted.com换成目标的白名单然后就可以尝试Fuzz了
+这里给大家看个案例，昨天晚上刚刚挖到的，可惜撞洞了
+![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzz9.png)
+其实很简单，我只是运气好而已同样的bypass也可以用到SSRF中进行尝试
+
+##XSS Fuzzer
+前面的博客写过使用了，就不写了懒 ：)
+
+---
+#Payload
+```
+Fuzzdb
+https://github.com/Fuzzdb-project/Fuzzdb
+seclist
+https://github.com/danielmiessler/SecLists
+某大牛的字典
+https://github.com/bl4de/dictionaries/
+https://github.com/1N3/IntruderPayloads/
+还有key师傅的字典
+```
+之后整理修改删除了没用的留下了有用的
+打包！密码`123456`
+
+`http://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/Fuzz/fuzzing.zip`
+
+#最后
+我通过自己的努力终于可以堂堂正正的走到这条路上了，但是走到哪我不清楚，我走的多快多慢都无所谓，我走在这里我觉得是一件很高兴的事，而且我可以看到我在前进。我可以看到过去的我在那，但我知道我现在一直在走。
+写于2019/2/19 2:28AM
