@@ -3,14 +3,14 @@ clay是富二代
 
 #References
 (嫌我菜的表哥直接去看别人的，我以后会把链接直接发到上面)
+```
 https://www.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)
 https://medium.com/@logicbomb_1/bugbounty-compromising-user-account-how-i-was-able-to-compromise-user-account-via-http-4288068b901f
 https://www.owasp.org/images/b/ba/AppsecEU09_CarettoniDiPaola_v0.8.pdf
 https://github.com/EdOverflow/can-i-take-over-xyz
 https://0xpatrik.com/subdomain-takeover-ns/
 https://dzone.com/articles/what-are-subdomain-takeovers-how-to-test-and-avoid
-
-
+```
 
 #HPP-HTTP Parameter Pollution
 `Supplying multiple HTTP parameters with the same name may cause an application to interpret values in unanticipated ways. By exploiting these effects, an attacker may be able to bypass input validation, trigger application errors or modify internal variables values. As HTTP Parameter Pollution (in short HPP) affects a building block of all web technologies, server and client side attacks exist. `
@@ -18,7 +18,7 @@ https://dzone.com/articles/what-are-subdomain-takeovers-how-to-test-and-avoid
 `e.g. https://claynb.com/test.php?clay=nb&clay=rich`
 
 因为觉得没什么可以写的所以就做备忘单
-[p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/HPP1.png)
+![p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/HPP1.png)
 
 #Subdomain takeover
 关于子域名接管我相信最近大家多多少少都有看到案例，但是我们针对子域名接管的挖掘很少有文章提到，于是我写一篇蹭热度，毕竟相当
@@ -73,9 +73,9 @@ c1h2e1.github.io.	30	IN	A	185.199.108.153
 首先执行了dig命令发现解析了`redirect.feedpress.me`然而这个feedpress可以导致子域名接管，最终成功的接管了域名。
 
 ##可接管服务！
-[p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover1.png)
-[p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover2.png)
-[p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover3.png)
+![p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover1.png)
+![p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover2.png)
+![p1](https://c1h2e1.oss-cn-qingdao.aliyuncs.com/image/HPP/takeover3.png)
 我们需要做的事情就是针对子域名进行搜集，对比指纹，查看是否有接管的可能。
 
 #最后
