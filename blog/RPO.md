@@ -1,9 +1,6 @@
 #原文链接
 `https://blog.innerht.ml/rpo-gadgets/`
 
-#前言
-最近，我做了一个培训，主要是关于漏洞挖掘的进阶经验谈，会有大量的国外文章的分析和骚姿势，收费是2000元，50课时，面向有基础的学员，毕业包回本。我的QQ `1119544572` WeChat `baiheming123456` contact me～
-
 #正文
 首先先说什么是RPO(Relative Path Overwrite)相对路径覆盖，在Google的工具栏中找到了一个页面`http://www.google.com/tools/toolbar/buttons/apis/howto_guide.html`
 其中存在RPO的漏洞代码是

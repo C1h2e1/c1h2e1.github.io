@@ -1,6 +1,3 @@
-#关于我们的技术分享群组
-![PIC](http://c1h2e1.oss-cn-qingdao.aliyuncs.com/qrcode.jpg)
-从原来的机制进行了修改，现在是收费的价格为50元
 
 #About CORS
 首先什么是同源
